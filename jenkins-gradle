@@ -28,7 +28,7 @@ pipeline
 					   steps{
 					   
 					   
-              withAnt(installation: 'localant', jdk: 'localjdk')
+              withGrdle(installation: 'localgradle', jdk: 'localjdk')
 					{
 					
 					sh 'gradle prepare'
@@ -49,7 +49,7 @@ pipeline
 				   steps
 				     {
 					     
-            withAnt(installation: 'localant', jdk: 'localjdk')
+            withGradle(installation: 'localgradle', jdk: 'localjdk')
 					{
 					
 					sh 'gradle compile'
