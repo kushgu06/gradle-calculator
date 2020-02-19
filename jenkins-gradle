@@ -1,0 +1,80 @@
+pipeline 
+        {
+		
+	       agent any
+              stages
+				{
+				
+				   stage('scm checkout')
+				 
+				    {
+					  steps{
+					  
+				                git branch: 'master', url: 'https://github.com/kushgu06/Ant-WebProject.git'	
+						
+					  
+				           }
+					  
+					  
+					 
+					  }
+					 
+					 
+				
+                stage('validate code')
+
+					{
+					
+					   steps{
+					   
+					   
+              withAnt(installation: 'localant', jdk: 'localjdk')
+					{
+					
+					sh 'gradle prepare'
+					
+                      				}
+					   
+					   
+					   }
+					
+					
+					}
+				
+				
+				stage ('compile')
+				
+				 {
+				 
+				   steps
+				     {
+					     
+            withAnt(installation: 'localant', jdk: 'localjdk')
+					{
+					
+					sh 'gradle compile'
+					
+                      				}
+					   
+					 
+					 
+					 }
+				   
+				   
+				 
+				 
+				 }
+				
+	
+				
+				
+				
+				}
+		
+		
+		
+		
+			}
+		
+
+
