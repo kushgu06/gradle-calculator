@@ -10,7 +10,7 @@ pipeline
 				    {
 					  steps{
 					  
-				                git branch: 'master', url: 'https://github.com/kushgu06/Ant-WebProject.git'	
+				                git branch: 'master', url: 'https://github.com/kushgu06/gradle-calculator.git'	
 						
 					  
 				           }
